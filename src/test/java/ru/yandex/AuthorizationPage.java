@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class AuthorizationPage {
 
     String login = "",
-            password = "";
+           password = "";
 
     public void openPage() {
         open("http://yandex.ru/");
@@ -24,6 +24,6 @@ public class AuthorizationPage {
     }
 
     public void checkUserName() {
-        $("div.desk-notif-card__title").shouldHave(text("Даниил Вулих"));
+        $("div.desk-notif-card__title").shouldHave(text(""));
     }
 }
