@@ -14,7 +14,7 @@
 
 
 ## Скриншоты
-#### *Allure Report - простой и доступный генератор отчетов:*
+#### *Allure Report - простой и удобный генератор отчетов:*
 ![selenoid_screenshot](src/test/resources/AllureReportAuth.png)
 
 
