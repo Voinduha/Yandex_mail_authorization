@@ -79,6 +79,7 @@ public class AuthorizationTest extends TestBase {
 
         authorizationPage.openPage();
         authorizationPage.setEmptyFieldLogin();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле пароль не заполненным")
