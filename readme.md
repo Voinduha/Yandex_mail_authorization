@@ -25,4 +25,7 @@
 
 
 ![selenoid_screenshot](src/test/resources/ScreenShotSteps.png)
+
+
+![selenoid_screenshot](src/test/resources/GeneratedScreen.png)
   
