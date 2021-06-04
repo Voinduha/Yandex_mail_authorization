@@ -89,10 +89,9 @@ public class AuthorizationPage {
         $("#passp-field-passwd").val(empty_field_password).pressEnter();
     }
 
-
     public void makeScreenshot() {
         InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
-        Allure.attachment("Screenshot", stream );
+        Allure.attachment("Screenshot", stream);
     }
 
 }
