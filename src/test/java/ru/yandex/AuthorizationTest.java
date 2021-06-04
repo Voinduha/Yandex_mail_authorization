@@ -1,10 +1,17 @@
 package ru.yandex;
 
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+
+@Owner("DanVu")
+@Link(value = "Yandex", url = "http://yandex.ru")
+@DisplayName("Тесты на проверку авторизации по логину и паролю")
 
 public class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage;
-
 
     @Test
     void userShouldBeAbleToLogin() {
