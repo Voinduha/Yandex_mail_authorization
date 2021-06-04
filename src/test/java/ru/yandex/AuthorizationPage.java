@@ -13,6 +13,12 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationPage {
 
+
+    public void makeScreenshot() {
+        InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
+        Allure.attachment("Screenshot", stream);
+    }
+
     Faker faker = new Faker();
     String login = "stoyuzer",
             password = "Zc43fal",
@@ -88,10 +94,4 @@ public class AuthorizationPage {
         $("div[data-t='field:passwd']").click();
         $("#passp-field-passwd").val(empty_field_password).pressEnter();
     }
-
-    public void makeScreenshot() {
-        InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
-        Allure.attachment("Screenshot", stream);
-    }
-
 }

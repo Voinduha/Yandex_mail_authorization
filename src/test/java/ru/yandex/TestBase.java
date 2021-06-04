@@ -27,11 +27,6 @@ public class TestBase {
 
     }
 
-    private void makeScreenshot() {
-        InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
-        Allure.attachment("Screenshot", stream);
-    }
-
     @AfterEach
     public void addAttachments() {
 
