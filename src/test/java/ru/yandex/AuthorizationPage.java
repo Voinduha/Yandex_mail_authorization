@@ -15,8 +15,8 @@ public class AuthorizationPage {
             password_with_uppercase = "ZC43FAL",
             wrong_login = faker.funnyName().name(),
             wrong_password = faker.internet().password(9, 15),
-            empty_field_login = "",
-            empty_field_password = "";
+            empty_field_login = " ",
+            empty_field_password = " ";
 
     public void openPage() {
         open("http://yandex.ru");
