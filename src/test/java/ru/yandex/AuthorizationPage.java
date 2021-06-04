@@ -1,18 +1,22 @@
 package ru.yandex;
 
+import com.github.javafaker.Faker;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationPage {
 
-    String login = "danvu",
-           password = " ",
-           login_with_capital_latter = "Danvu",
-           login_with_uppercase = "DANVU",
-           wrong_login = "jfkfk",
-           wrong_password = "hej198gf",
-           empty_field_login = " ",
-           empty_field_password = " ";
+    Faker faker = new Faker();
+    String login = "stoyuzer",
+            password = "Zc43fal",
+            login_with_capital_latter = "Stoyuzer",
+            login_with_uppercase = "STOYUZER",
+            password_with_uppercase = "ZC43FAL",
+            wrong_login = faker.funnyName().name(),
+            wrong_password = faker.internet().password(9, 15),
+            empty_field_login = "",
+            empty_field_password = "";
 
     public void openPage() {
         open("http://yandex.ru");
@@ -30,12 +34,17 @@ public class AuthorizationPage {
     }
 
     public void checkUserName() {
-        $("div.desk-notif-card__title").shouldHave(text("Даниил Вулих"));
+        $("div.desk-notif-card__title").shouldHave(text("stoyuzer"));
     }
 
     public void setLoginWithCapitalLetter() {
         $("div[data-t='field:login']").click();
         $("#passp-field-login").val(login_with_capital_latter).pressEnter();
+    }
+
+    public void setPasswordWithUppercase() {
+        $("div[data-t='field:passwd']").click();
+        $("#passp-field-passwd").val(password_with_uppercase).pressEnter();
     }
 
     public void setLoginWithUppercase() {

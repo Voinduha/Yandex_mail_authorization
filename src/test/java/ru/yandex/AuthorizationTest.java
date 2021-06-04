@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 public class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage;
 
+
     @Test
     void userShouldBeAbleToLogin() {
         authorizationPage = new AuthorizationPage();
@@ -67,5 +68,14 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setEmptyFiledPassword();
+    }
+
+    @Test
+    void userShouldNotBeAbleToLoginWithUppercasePassword() {
+        authorizationPage = new AuthorizationPage();
+
+        authorizationPage.openPage();
+        authorizationPage.setLogin();
+        authorizationPage.setPasswordWithUppercase();
     }
 }
