@@ -22,6 +22,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.setLogin();
         authorizationPage.setPassword();
         authorizationPage.checkUserName();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Отображение корректной информации о пользователе, " +
@@ -34,6 +35,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.setLoginWithCapitalLetter();
         authorizationPage.setPassword();
         authorizationPage.checkUserName();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Отображение корректной информации о пользователе, " +
@@ -46,6 +48,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.setLoginWithUppercase();
         authorizationPage.setPassword();
         authorizationPage.checkUserName();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Авторизация не завершится, если ввести в поле логин не верные данные")
@@ -55,6 +58,7 @@ public class AuthorizationTest extends TestBase {
 
         authorizationPage.openPage();
         authorizationPage.setWronglogin();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Авторизация не завершится, если ввести в поле пароль не верные данные")
@@ -65,6 +69,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setWrongPassword();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле логин не заполненным")
@@ -84,6 +89,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setEmptyFiledPassword();
+        authorizationPage.makeScreenshot();
     }
 
     @DisplayName("Авторизация не завершится, если заполнить поле пароль в вернем регистре")
@@ -94,5 +100,6 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setPasswordWithUppercase();
+        authorizationPage.makeScreenshot();
     }
 }

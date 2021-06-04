@@ -22,4 +22,7 @@
 
 
 ![selenoid_screenshot](src/test/resources/AllureReportAuthTests.png)
+
+
+![selenoid_screenshot](src/test/resources/ScreenShotSteps.png)
   

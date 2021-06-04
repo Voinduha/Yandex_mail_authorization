@@ -1,7 +1,12 @@
 package ru.yandex;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
+import org.openqa.selenium.OutputType;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -83,4 +88,11 @@ public class AuthorizationPage {
         $("div[data-t='field:passwd']").click();
         $("#passp-field-passwd").val(empty_field_password).pressEnter();
     }
+
+
+    public void makeScreenshot() {
+        InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
+        Allure.attachment("Screenshot", stream );
+    }
+
 }
