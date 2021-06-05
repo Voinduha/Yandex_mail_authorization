@@ -23,6 +23,7 @@
     <img src="https://starchenkov.pro/qa-guru/img/skills/Github.svg" width="40" height="40"  alt="Github"/>
 </a>
 
+IntelliJ IDEA, Java, Selenide, Gradle, JUnit5, Allure SE, Github
 
 
 ## UI тесты
