@@ -1,3 +1,6 @@
+
+![GitHub repo size](https://img.shields.io/github/repo-size/dandreyanov/messaging_lk?style=flat-square)
+
 ## Реализованы проверки функционала авторизации по логину и паролю на сайте http://yandex.ru
 
 ## Стэк технологий
@@ -51,4 +54,3 @@ IntelliJ IDEA, Java, Selenide, Gradle, JUnit5, Allure SE, Github
 ![selenoid_screenshot](src/test/resources/GeneratedScreen.png)
 
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dandreyanov/messaging_lk?style=flat-square)
