@@ -1,4 +1,4 @@
-# Проверка функционала авторизации по логину и паролю на сайте http://yandex.ru
+## Реализованы проверки функционала авторизации по логину и паролю на сайте http://yandex.ru
 
 ## Стэк технологий
 <a href="https://www.jetbrains.com/idea/">
@@ -48,4 +48,6 @@
 
 
 ![selenoid_screenshot](src/test/resources/GeneratedScreen.png)
-  
+
+
+![GitHub repo size](https://img.shields.io/github/repo-size/dandreyanov/messaging_lk?style=flat-square)
