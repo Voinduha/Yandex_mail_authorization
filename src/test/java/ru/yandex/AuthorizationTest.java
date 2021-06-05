@@ -93,7 +93,7 @@ public class AuthorizationTest extends TestBase {
         authorizationPage.makeScreenshot();
     }
 
-    @DisplayName("Авторизация не завершится, если заполнить поле пароль в вернем регистре")
+    @DisplayName("Авторизация не завершится, если заполнить поле пароль в верxнем регистре")
     @Test
     void userShouldNotBeAbleToLoginWithUppercasePassword() {
         authorizationPage = new AuthorizationPage();
