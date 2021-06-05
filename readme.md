@@ -1,5 +1,4 @@
 
-![GitHub repo size](https://img.shields.io/github/repo-size/voinduha/messaging_lk?style=flat-square)
 
 ## Реализованы проверки функционала авторизации по логину и паролю на сайте http://yandex.ru
 
