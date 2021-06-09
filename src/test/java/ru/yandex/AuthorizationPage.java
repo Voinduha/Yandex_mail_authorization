@@ -1,12 +1,7 @@
 package ru.yandex;
 
 import com.github.javafaker.Faker;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
-import org.openqa.selenium.OutputType;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,13 +11,13 @@ public class AuthorizationPage {
     Faker faker = new Faker();
     String login = "stoyuzer",
             password = "Zc43fal",
-            login_with_capital_latter = "Stoyuzer",
-            login_with_uppercase = "STOYUZER",
-            password_with_uppercase = "ZC43FAL",
-            wrong_login = faker.funnyName().name(),
-            wrong_password = faker.internet().password(9, 15),
-            empty_field_login = " ",
-            empty_field_password = " ";
+            loginWithCapitalLatter = "Stoyuzer",
+            loginWithUppercase = "STOYUZER",
+            passwordWithUppercase = "ZC43FAL",
+            wrongLogin = faker.funnyName().name(),
+            wrongPassword = faker.internet().password(9, 15),
+            emptyFieldLogin = " ",
+            emptyFieldPassword = " ";
 
     @Step("Открываем Yandex.ru")
     public void openPage() {
@@ -50,48 +45,42 @@ public class AuthorizationPage {
     @Step("Вводим логин с заглавной буквы")
     public void setLoginWithCapitalLetter() {
         $("div[data-t='field:login']").click();
-        $("#passp-field-login").val(login_with_capital_latter).pressEnter();
+        $("#passp-field-login").val(loginWithCapitalLatter).pressEnter();
     }
 
     @Step("Вводим пароль в верхнем регистре")
     public void setPasswordWithUppercase() {
         $("div[data-t='field:passwd']").click();
-        $("#passp-field-passwd").val(password_with_uppercase).pressEnter();
+        $("#passp-field-passwd").val(passwordWithUppercase).pressEnter();
     }
 
     @Step("Вводим логин в верхнем регистре")
     public void setLoginWithUppercase() {
         $("div[data-t='field:login']").click();
-        $("#passp-field-login").val(login_with_uppercase).pressEnter();
+        $("#passp-field-login").val(loginWithUppercase).pressEnter();
     }
 
     @Step("Вводим автосгенерированный логин")
     public void setWronglogin() {
         $("div[data-t='field:login']").click();
-        $("#passp-field-login").val(wrong_login).pressEnter();
+        $("#passp-field-login").val(wrongLogin).pressEnter();
     }
 
     @Step("Вводим автосгенерированный пароль")
     public void setWrongPassword() {
         $("div[data-t='field:passwd']").click();
-        $("#passp-field-passwd").val(wrong_password).pressEnter();
+        $("#passp-field-passwd").val(wrongPassword).pressEnter();
     }
 
     @Step("Оставляем пустое поле логин")
     public void setEmptyFieldLogin() {
         $("div[data-t='field:login']").click();
-        $("#passp-field-login").val(empty_field_login).pressEnter();
+        $("#passp-field-login").val(emptyFieldLogin).pressEnter();
     }
 
     @Step("Оставляем пустое поле пароль")
     public void setEmptyFiledPassword() {
         $("div[data-t='field:passwd']").click();
-        $("#passp-field-passwd").val(empty_field_password).pressEnter();
+        $("#passp-field-passwd").val(emptyFieldPassword).pressEnter();
     }
-
-    public void makeScreenshot() {
-        InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
-        Allure.attachment("Screenshot", stream);
-    }
-
 }

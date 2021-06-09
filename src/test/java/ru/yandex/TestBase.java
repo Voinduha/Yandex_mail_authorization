@@ -1,12 +1,17 @@
 package ru.yandex;
 
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Arrays;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.screenshot;
 
 public class TestBase {
 
@@ -22,7 +27,7 @@ public class TestBase {
     }
 
     @AfterEach
-    public void addAttachments() {
+    public void closeWePage() {
 
         closeWebDriver();
     }
