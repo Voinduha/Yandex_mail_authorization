@@ -27,7 +27,7 @@ public class TestBase {
     }
 
     @AfterEach
-    public void closeWePage() {
+    public void closeWebPage() {
 
         closeWebDriver();
     }
