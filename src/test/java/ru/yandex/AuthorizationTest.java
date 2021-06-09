@@ -16,7 +16,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
             "после авторизации на странице")
     @Test
     void userShouldBeAbleToLogin() {
-
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setPassword();
@@ -27,7 +26,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
             "если ввести в поле авторизации пользователя логин с первой заглавной буквы")
     @Test
     void userShouldBeAbleToLoginWithCapitalLatter() {
-
         authorizationPage.openPage();
         authorizationPage.setLoginWithCapitalLetter();
         authorizationPage.setPassword();
@@ -38,7 +36,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
             "если ввести в поле авторизации пользователя логин в верхнем регистре (заглавными буквами)")
     @Test
     void userShouldBeAbleToLoginWithUppercase() {
-
         authorizationPage.openPage();
         authorizationPage.setLoginWithUppercase();
         authorizationPage.setPassword();
@@ -48,7 +45,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
     @DisplayName("Авторизация не завершится, если ввести в поле логин не верные данные")
     @Test
     void userShouldNotBeAbleToLoginWithWrongLogin() {
-
         authorizationPage.openPage();
         authorizationPage.setWronglogin();
     }
@@ -56,26 +52,21 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
     @DisplayName("Авторизация не завершится, если ввести в поле пароль не верные данные")
     @Test
     void userShouldNotBeAbleToLoginWithWrongPassword() {
-
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setWrongPassword();
-
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле логин не заполненным")
     @Test
     void userShouldNotBeAbleToLoginWithEmptyFieldLogin() {
-
         authorizationPage.openPage();
         authorizationPage.setEmptyFieldLogin();
-
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле пароль не заполненным")
     @Test
     void userShouldNotBeAbleToLoginWithEmptyFieldPassword() {
-
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setEmptyFiledPassword();
@@ -84,7 +75,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
     @DisplayName("Авторизация не завершится, если заполнить поле пароль в верxнем регистре")
     @Test
     void userShouldNotBeAbleToLoginWithUppercasePassword() {
-
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setPasswordWithUppercase();
