@@ -106,6 +106,6 @@ public class AuthorizationPage {
     }
 
     public void checkThatLoginFieldNotCorrected() {
-        $(".Textinput-Hint_state_error").shouldHave(Condition.text("Такого аккаунта нет"));
+        $(".Textinput-Hint_state_error").shouldHave(Condition.text("Такой логин не подойдет"));
     }
 }
