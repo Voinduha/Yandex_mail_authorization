@@ -99,4 +99,13 @@ public class AuthorizationPage {
     public void checkThatLoginFieldEmpty() {
         $(".Textinput-Hint").shouldHave(Condition.text("Логин не указан"));
     }
+
+    @Step("Проверяем ошибку, что поле пароль заполнено не правильно")
+    public void checkThatPasswordFieldNotCorrected() {
+        $(".Textinput-Hint").shouldHave(Condition.text("Неверный пароль"));
+    }
+
+    public void checkThatLoginFieldNotCorrected() {
+        $(".Textinput-Hint_state_error").shouldHave(Condition.text("Такого аккаунта нет"));
+    }
 }

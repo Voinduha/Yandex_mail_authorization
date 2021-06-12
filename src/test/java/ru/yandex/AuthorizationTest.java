@@ -1,21 +1,16 @@
 package ru.yandex;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.conditions.Text;
 import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.$;
 
 @Owner("DanVu")
 @Link(value = "Yandex.ru", url = "http://yandex.ru")
 @DisplayName("Тесты на проверку авторизации по логину и паролю")
 
 public class AuthorizationTest extends TestBase {
-private final AuthorizationPage authorizationPage  = new AuthorizationPage();
+    private final AuthorizationPage authorizationPage = new AuthorizationPage();
 
     @DisplayName("Отображение корректной информации о пользователе, " +
             "после авторизации на странице")
@@ -52,6 +47,7 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
     void userShouldNotBeAbleToLoginWithWrongLogin() {
         authorizationPage.openPage();
         authorizationPage.setWronglogin();
+        authorizationPage.checkThatLoginFieldNotCorrected();
     }
 
     @DisplayName("Авторизация не завершится, если ввести в поле пароль не верные данные")
@@ -60,7 +56,7 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setWrongPassword();
-        $(".Textinput-Hint").shouldHave(Condition.text("Неверный пароль"));
+        authorizationPage.checkThatPasswordFieldNotCorrected();
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле логин не заполненным")
