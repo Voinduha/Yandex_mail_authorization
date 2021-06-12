@@ -1,5 +1,6 @@
 package ru.yandex;
 
+import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 
@@ -35,11 +36,6 @@ public class AuthorizationPage {
     public void setPassword() {
         $("div[data-t='field:passwd']").click();
         $("#passp-field-passwd").val(password).pressEnter();
-    }
-
-    @Step("Проверяем авторизацию пользователя")
-    public void checkUserName() {
-        $("div.desk-notif-card__title").shouldHave(text("stoyuzer"));
     }
 
     @Step("Вводим логин с заглавной буквы")
@@ -82,5 +78,25 @@ public class AuthorizationPage {
     public void setEmptyFiledPassword() {
         $("div[data-t='field:passwd']").click();
         $("#passp-field-passwd").val(emptyFieldPassword).pressEnter();
+    }
+
+    @Step("Проверяем авторизацию пользователя")
+    public void checkUserName() {
+        $("div.desk-notif-card__title").shouldHave(text("stoyuzer"));
+    }
+
+    @Step("Проверяем сообщение об ошибке")
+    public void checkThatPasswordDenied() {
+        $(".Textinput-Hint").shouldHave(Condition.text("Неверный пароль"));
+    }
+
+    @Step("Проверяем ошибку, что поле пароль не заполнено")
+    public void checkThatPasswordFieldEmpty() {
+        $(".Textinput-Hint_state_error").shouldHave(Condition.text("Пароль не указан"));
+    }
+
+    @Step("Проверяем ошибку, что поле логин не заполнено")
+    public void checkThatLoginFieldEmpty() {
+        $(".Textinput-Hint").shouldHave(Condition.text("Логин не указан"));
     }
 }

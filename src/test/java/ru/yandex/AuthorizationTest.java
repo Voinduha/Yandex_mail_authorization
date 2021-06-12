@@ -1,9 +1,14 @@
 package ru.yandex;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.conditions.Text;
 import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static com.codeborne.selenide.Selenide.$;
 
 @Owner("DanVu")
 @Link(value = "Yandex.ru", url = "http://yandex.ru")
@@ -55,6 +60,7 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setWrongPassword();
+        $(".Textinput-Hint").shouldHave(Condition.text("Неверный пароль"));
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле логин не заполненным")
@@ -62,6 +68,7 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
     void userShouldNotBeAbleToLoginWithEmptyFieldLogin() {
         authorizationPage.openPage();
         authorizationPage.setEmptyFieldLogin();
+        authorizationPage.checkThatLoginFieldEmpty();
     }
 
     @DisplayName("Авторизация не завершится, если оставить поле пароль не заполненным")
@@ -70,6 +77,7 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setEmptyFiledPassword();
+        authorizationPage.checkThatPasswordFieldEmpty();
     }
 
     @DisplayName("Авторизация не завершится, если заполнить поле пароль в верxнем регистре")
@@ -78,5 +86,6 @@ private final AuthorizationPage authorizationPage  = new AuthorizationPage();
         authorizationPage.openPage();
         authorizationPage.setLogin();
         authorizationPage.setPasswordWithUppercase();
+        authorizationPage.checkThatPasswordDenied();
     }
 }
